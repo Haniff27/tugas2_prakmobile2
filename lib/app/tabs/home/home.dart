@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_bit_app/app/components/food_card.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class Home extends StatelessWidget {
   final List<Map<String, String>> popularFood = [
@@ -115,14 +116,15 @@ class Home extends StatelessWidget {
                 left: 20.0,
                 right: 20.0,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    'I Want to EAT',
-                    style: TextStyle(fontSize: 21.0),
-                  ),
-                  Icon(Icons.notifications_none, size: 28.0)
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  FadeAnimatedText('WELCOME',
+                      textStyle: TextStyle(fontSize: 15)),
+                  FadeAnimatedText('TO', textStyle: TextStyle(fontSize: 15)),
+                  FadeAnimatedText('STREET FOOD BOGOR',
+                      textStyle: TextStyle(fontSize: 15)),
+                  FadeAnimatedText('I WANT TO EAT',
+                      textStyle: TextStyle(fontSize: 15)),
                 ],
               ),
             ),
